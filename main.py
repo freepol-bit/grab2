@@ -31,7 +31,7 @@ def root():
 @app.get("/{skey}", response_class=PlainTextResponse)
 def get_patent_data(skey: str):
     # 1️⃣ 이미 저장된 파일이 있는지 확인
-    file_path = os.path.join(TMP_DIR, f"{skey}.txt")
+    file_path = os.path.join(TMP_DIR, f"{skey}.html")
     
     if os.path.exists(file_path):
         with open(file_path, "r", encoding="utf-8") as f:
